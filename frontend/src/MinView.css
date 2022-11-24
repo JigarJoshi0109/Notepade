@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap');
+
+
+  .mainBck{
+    min-height: 93vh;
+    display: flex;
+    padding: 10px 0 ;
+  }
+
+  .page{
+    width: 100%;
+  }
+
+  .heading{
+    font-size: 60px;
+    font-family: "Cormorant";
+    padding: 5px 10px;
+  }
+
+
+  @media only screen and (max-width:764px) {
+    .heading{
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+    }
+  }

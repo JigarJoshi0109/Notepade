@@ -1,0 +1,11 @@
+
+
+.main{min-height: 100vh;
+display: flex;
+align-items: center;
+background-image:  url("../../../notebook-3820634.jpg");
+background-position: center;
+background-size: cover;
+margin: 0%;
+padding-top: 0%;
+}

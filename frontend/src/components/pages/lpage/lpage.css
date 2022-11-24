@@ -2,9 +2,89 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image:  url("../../../coffee-1276784.jpg");
+    background-image:  url("../../../notebook-3820634.jpg");
     background-position: center;
     background-size: cover;
     margin: 0%;
     padding-top: 0%;
+    
+}
+.title{
+    
+    padding-top: 75px;
+    font-size: 70px;
+
+}
+
+.subtitle{
+    font-size: 25px;
+    padding-top: 10px;
+    
+}
+.intro-text{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+    width: 70%;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+    
+}
+.ButtonContainer{
+    
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.LandB{
+    font-variant: 'dark';
+    background-color: rgb(63, 63, 63);
+font-weight: bold;
+width: 200px;
+height: 55px;
+border-radius: 12px;
+}
+
+@media only screen and (max-width:1042px){
+    .title{
+        font-size: 45px;
+    }
+    .LandB{
+        width: 90px;
+        height: 45px;
+    }
+    .ButtonContainer{
+    
+        margin-top: 120px;
+    margin-bottom: 50px;}
+
+}
+
+@media only screen and (max-width:668){
+    .ButtonContainer{
+    
+        margin-top: 35px;}
+    .title{
+        font-size: 35px;
+    }
+    .LandB{
+        width: 100px;
+        height: 45px;
+    }
+    
+
+
 }

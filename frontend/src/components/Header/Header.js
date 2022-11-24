@@ -1,13 +1,17 @@
 import React from 'react'
 import { Container, Navbar, Nav, NavDropdown, Button , Form, FormControl} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <>
-     <Navbar bg="primary" expand='lg' variant="light" className='square bg-primary rounded-pill'>
+     <Navbar bg="dark" expand='lg' variant="dark"  className="square bg-dark rounded"  style={{marginBottom:'0%', fontSize:'large'}}   >
       <Container>
-        <img href="#home" src='./a.jpg' width={'27'} height={'27'}/>
-        <Navbar.Brand href="#home" style={{fontWeight: 'bold'}}>𝓝𝓸𝓽𝓮𝓹𝓪𝓭𝓮</Navbar.Brand>
+        <img href="#home" src='./a.jpg' width={'30'} height={'30'}/>
+        <Navbar.Brand style={{fontWeight: 'bold',fontSize:'x-large'}}>
+          <Link to='/'> 𝓝𝓸𝓽𝓮𝓹𝓪𝓭𝓮</Link>
+          
+         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='m-auto'> 
@@ -22,7 +26,9 @@ const Header = () => {
           </Nav>
        
           <Nav >
-            <Nav.Link href="#home" style={{fontWeight: 'bold'}}>My Notes</Nav.Link>
+            <Nav.Link href="#home" style={{fontWeight: 'bold'}}>
+              <Link to='mynotes'>My Notes</Link>
+              </Nav.Link>
 
             <NavDropdown title="JigarJoshi" id="collasible-nav-dropdown" style={{fontWeight: 'bold'}}>
               <NavDropdown.Item href="#action/3.1" style={{fontWeight: 'bold'}}>My Profile</NavDropdown.Item>
