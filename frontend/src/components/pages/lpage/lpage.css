@@ -1,3 +1,4 @@
+
 .main{
     min-height: 100vh;
     display: flex;
@@ -9,6 +10,8 @@
     padding-top: 0%;
     
 }
+
+
 .title{
     
     padding-top: 75px;

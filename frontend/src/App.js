@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Lpage from "./components/pages/lpage/Lpage";
 import {Routes, Route,BrowserRouter} from 'react-router-dom'
 import MyNotes from "./MyNotes/MyNotes";
+import LoginScreen from "./components/pages/LoginPage/LoginScreen";
+import RegisterScreen from "./components/pages/RegisterPage/RegisterScreen";
 //import Background from "./components/Background/Background";
 
 const App = ()=>(
@@ -13,6 +15,8 @@ const App = ()=>(
         <main >
             <Routes>
                 <Route path="/" element={<Lpage/>}/>
+                <Route path="/login" element={<LoginScreen/>}/>
+                <Route path="/register" element={<RegisterScreen/>}/>
                 <Route path="/mynotes" element={<MyNotes/>}/>
             </Routes>
         </main>

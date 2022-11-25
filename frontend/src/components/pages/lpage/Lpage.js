@@ -1,9 +1,11 @@
 import React from 'react'
 import { Button, Container, Row } from 'react-bootstrap'
 import './lpage.css'
+//import carousel from 'react-responsive-carousel'
 
 const Lpage = () => {
   return (
+    
     <div className='main'>
       <Container>
         <Row> 
@@ -15,9 +17,11 @@ const Lpage = () => {
           <div className='ButtonContainer'>
                   <a href='/login'> <Button size='lg' className='LandB'  variant='primary'>
                     Login</Button></a>
-                    <a href='/SignUp'> <Button size='lg' className='LandB' variant='primary'>
+                    <a href='/register'> <Button size='lg' className='LandB' variant='primary'>
                     SignUp</Button></a>
-          </div>    
+          </div> 
+
+             
         </div>
           </Row>
       </Container>
