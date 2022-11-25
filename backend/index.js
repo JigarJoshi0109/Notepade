@@ -1,9 +1,16 @@
 const express = require("express");
 const notes = require("./data/notes");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const userRoute = require('./routes/userRoute');
+const { notfound, errorHandler } = require("./Middlewares/errorMiddlewares");
 
 const app = express();
 dotenv.config();
+connectDB();
+
+app.use(express.json())
+
 
 app.get("/", (req, res) => {
   res.send("API is Running.......");
@@ -13,10 +20,10 @@ app.get("/api/notes", (req, res) => {
   res.json(notes);
 });
 
-app.get("/api/notes/:id", (req, res) => {
-  const note = notes.find((n) => n._id === req.params.id);
-  res.send(note);
-});
+app.use('/api/users',userRoute)
+
+app.use(notfound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
