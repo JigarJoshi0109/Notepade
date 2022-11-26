@@ -1,0 +1,12 @@
+.loginContainer{
+    font-size: x-large;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.BB{
+margin-top: 30px;
+}
