@@ -32,7 +32,7 @@ const registerUser =asyncHandler( async (req,res)=>{
     }
     else{
         res.status(400)
-        throw new Error("Invalid Email or Password ! ")
+        throw new Error("Error Occured This User Already Exists! ")
     }
 
 });
@@ -58,7 +58,7 @@ const authUser =asyncHandler( async (req,res)=>{
 
     else{
         res.status(400)
-        throw new Error("Error Occured ! ")
+        throw new Error("Invalid Email or Password !  ")
     }
 
 });
