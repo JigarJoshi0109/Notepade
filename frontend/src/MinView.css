@@ -21,7 +21,7 @@
 
   @media only screen and (max-width:764px) {
     .heading{
-        font-size: 25px;
+        font-size: 45px;
         display: flex;
         justify-content: center;
     }

@@ -65,9 +65,13 @@ const submitHandler = async(e)=>{
                     <Form.Label className='py-3'>
                         Password
                     </Form.Label>
-                    <Form.Control value={password} type='password' placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
+                   
+                    <Form.Control maxLength={12} value={password} type='password' placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
 
                 </Form.Group>
+                <div>
+                        <p style={{fontSize:"x-small" , marginTop:'20px'}}>Maximum Password Length ~ 12</p>
+                    </div>
                 <div className='BB' >
                 <Button variant='primary' type='submit' size='lg'>
                     Submit
