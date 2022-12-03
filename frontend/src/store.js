@@ -2,8 +2,9 @@ import {legacy_createStore as createStore ,combineReducers,applyMiddleware } fro
 
 import thunk from 'redux-thunk'
 import { composeWithDevTools} from 'redux-devtools-extension'
+import { userLoginReducer } from './reduces/userReducers';
 const reducer = combineReducers({
-    //reducers
+    userLogin: userLoginReducer,
 
 
 })
