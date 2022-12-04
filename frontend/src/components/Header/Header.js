@@ -1,11 +1,23 @@
 import React from 'react'
 import { Container, Navbar, Nav, NavDropdown, Button , Form, FormControl} from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { logout } from '../../actions/userActions'
 
 const Header = () => {
 
   const Navigate = useNavigate()
 
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state)=>state.userLogin)
+
+  const {userInfo} = userLogin;
+
+  const logoutHandler =()=>{
+    dispatch(logout())
+    Navigate('/')
+  }
 
   return (
     <>
@@ -19,14 +31,14 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='m-auto'> 
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
             <FormControl
               type="text"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
             />
-          </Form>
+          </Form> */}
           </Nav>
        
           <Nav >
@@ -37,11 +49,7 @@ const Header = () => {
             <NavDropdown title="JigarJoshi" id="collasible-nav-dropdown" style={{fontWeight: 'bold'}}>
               <NavDropdown.Item href="#action/3.1" style={{fontWeight: 'bold'}}>My Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={()=>{localStorage.removeItem("userInfo");
-
-              Navigate("/")
-
-            }}   style={{fontWeight: 'bold'}}>
+              <NavDropdown.Item onClick={logoutHandler}   style={{fontWeight: 'bold'}}>
                 Log-Out
               </NavDropdown.Item>
             </NavDropdown>
