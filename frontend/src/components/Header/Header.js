@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Navbar, Nav, NavDropdown, Button , Form, FormControl} from 'react-bootstrap'
+import { Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../actions/userActions'
@@ -23,7 +23,7 @@ const Header = () => {
     <>
      <Navbar bg="dark" expand='lg' variant="dark"  className="square bg-dark rounded"  style={{marginBottom:'0%', fontSize:'large'}}   >
       <Container>
-        <img href="#home" src='./a.jpg' width={'30'} height={'30'}/>
+        <img href="/" src='./a.jpg' width={'30'} height={'30'}/>
         <Navbar.Brand style={{fontWeight: 'bold',fontSize:'x-large'}}>
           <Link to='/'> 𝓝𝓸𝓽𝓮𝓹𝓪𝓭𝓮</Link>
           
