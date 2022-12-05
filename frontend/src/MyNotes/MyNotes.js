@@ -1,13 +1,27 @@
-import {React , useEffect, useState} from 'react'
+import {React , useEffect} from 'react'
 import {  Accordion, Badge, Button, Card } from 'react-bootstrap'
 import MinView from '../components/MinView'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 //import notes from '../Data/notes'
-import axios from 'axios'
+// import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { listNotes } from '../actions/notesActions'
+import Loading from '../components/Loading'
+import ErrorMessage from '../components/ErrorMessage'
 
 const MyNotes = () => {
 
- const [ notes , setnotes]= useState([])
+  const Navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const noteList = useSelector(state=>state.noteList)
+  const { loading, notes , error }= noteList
+
+  const userLogin = useSelector(state=>state.userLogin)
+  const { userInfo } = userLogin
+
+//  const [ notes , setnotes]= useState([])
 
   const deleteHandler = (id) => {
     if(window.confirm("Are you Sure....")){
@@ -15,21 +29,24 @@ const MyNotes = () => {
     }
   }
 
-  const fetchNotes = async() =>{
-    const {data} = await axios.get("/api/notes")
-   setnotes(data);
-  }
+  // const fetchNotes = async() =>{
+  //   const {data} = await axios.get("/api/notes")
+  //  setnotes(data);
+  // }
 
 console.log(notes);
  useEffect(() => {
-    
-   fetchNotes()
- }, [])
+    dispatch(listNotes())
+    if(!userInfo){
+      Navigate("/")
+    }
+  //  fetchNotes()
+ }, [dispatch,Navigate,userInfo])
  
 
 
   return (
-    <MinView tittle="Welcome Back Jigar Joshi" payload={
+    <MinView tittle={`Welcome Back ${userInfo.name}..!`} payload={
     <>
 <Link  to="/createnote">
         <Button variant='success' style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
@@ -37,8 +54,10 @@ console.log(notes);
         </Button>
         
       </Link>
+      {error && <ErrorMessage variant='danger'>{error}</ErrorMessage>}
+      {loading && <Loading/>}
       {
-      notes.map(note=>(  
+      notes?.map(note=>(  
         
        <Accordion key={note._id}>
         <Accordion.Item eventKey='0'>
@@ -52,7 +71,7 @@ console.log(notes);
       alignSelf:'center',
       fontSize:18}}>
         <Accordion.Button>
-        {note.title}</Accordion.Button></span>
+        {note.tittle}</Accordion.Button></span>
         <div>
           <Button href={`/note/${note._id }`} variant='primary'>Edit</Button>
           <Button variant='danger' style={{marginLeft:8}} onClick={()=>deleteHandler(note._id)}>Delete</Button>
@@ -72,7 +91,11 @@ console.log(notes);
          {note.content}
         </p>
         <footer className="blockquote-footer">
-          Created On --Date
+          Created on{" "}
+          <cite title='Source Title'>
+            {note.createdAt.substring(0,10)}
+
+          </cite>
         </footer>
       </blockquote>
 

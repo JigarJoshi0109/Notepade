@@ -18,6 +18,7 @@ const Header = () => {
     dispatch(logout())
     Navigate('/')
   }
+  
 
   return (
     <>
@@ -46,7 +47,7 @@ const Header = () => {
               <Link to='mynotes'>My Notes</Link>
               </Nav.Link>
 
-            <NavDropdown title="JigarJoshi" id="collasible-nav-dropdown" style={{fontWeight: 'bold'}}>
+            <NavDropdown title={`Jigar`} id="collasible-nav-dropdown" style={{fontWeight: 'bold'}}>
               <NavDropdown.Item href="#action/3.1" style={{fontWeight: 'bold'}}>My Profile</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={logoutHandler}   style={{fontWeight: 'bold'}}>

@@ -3,9 +3,11 @@ import {legacy_createStore as createStore ,combineReducers,applyMiddleware } fro
 import thunk from 'redux-thunk'
 import { composeWithDevTools} from 'redux-devtools-extension'
 import { userLoginReducer, userRegisterReducer } from './reduces/userReducers';
+import { noteListReducer } from './reduces/notesReducers';
 const reducer = combineReducers({
     userLogin: userLoginReducer,
-    userRegister:userRegisterReducer
+    userRegister:userRegisterReducer,
+    noteList: noteListReducer
 
 
 })
